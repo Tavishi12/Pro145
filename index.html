@@ -1,0 +1,84 @@
+<html>
+
+<head>
+  <title> Geometry</title>
+
+  <!--  --------- IMPORTED LIBRARIES  ------>
+  
+
+  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+
+</head>
+
+<body>
+
+  <a-scene> <!-- Creating scene -->
+
+
+    
+
+    <!--  --------- SKY  --------- -->
+
+    <a-sky id="background-img" color="#EBEBEB"></a-sky>
+      
+ 
+   <!--  --------- GROUND  --------- -->
+
+    <a-plane id="ground" color="#000000" position="0 0 0" rotation="-90 0 0" width="10" lenght="10"></a-plane>
+    
+    <!--  --------- SHAPES  --------- -->
+    
+     <!-- There's a few more of shapes you can use.
+          I'll leave it here with the respective dodumentation links for you to check out:
+<a-circle> : https://aframe.io/docs/0.6.0/primitives/a-circle.html
+
+<a-triangle> : https://aframe.io/docs/0.6.0/primitives/a-triangle.html
+
+<a-torus>: 
+https://aframe.io/docs/0.6.0/primitives/a-torus.html
+
+<a-torus-knot>: https://aframe.io/docs/0.6.0/primitives/a-torus-knot.html
+
+      --> 
+     <a-cylinder position="0 0.75 -0.25" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    <!--Since I want this to stand on top of the plane, I'll add half it's height to the plane height on the y axis of the position property
+I wrote -0.25 on the z axis so I would move the cylinder a little further in the plane-->  
+     
+      <a-box position="-1 0.5 0.5" depth="0.5" height="0.5" width="0.5" color="#FFF65D"></a-box>
+    
+    <a-cone  position="1 0.5 0" color="tomato" radius-bottom="0.5" radius-top="0"></a-cone>
+    <!--If the radius top is other than 0, you'll have a cone top cut by a plane, if it's 0 is a regular cone -->  
+    
+    <a-dodecahedron position="2 0.25 0"  color="#FF9FFF" radius="0.5"></a-dodecahedron>
+    
+    <a-octahedron position="-2.5 0.25 0" color="#FF926B" radius="0.45"></a-octahedron>
+    
+    <a-ring  position="-3.7 0.7 0" color="teal" radius-inner="0.25" radius-outer="0.7"></a-ring>
+    <!--The position on the y axis of the ring is determined according to the bottom which is why the outer radius and y position have the same value
+
+The same happens with the sphere-->
+    
+    <a-sphere  position="3.7 0.5 0" color="blue" radius="0.5" > </a-sphere>
+     
+ <!--  --------- CAMERA AND CURSOR  --------- -->  
+     
+      
+<a-camera  look-controls-enabled wasd-controls-enabled position="0 0 3"> 
+   <!--The camera is a bit far from position 0 0 0 so you can view the full picture  -->  
+  
+    <a-cursor position="0 0 -3"
+              geometry="primitive: ring; radiusOuter: 0.030; radiusInner: 0.020;" 
+              material="color: #11d8c4; shader: flat"
+              fuse="true" timeout="10">   
+    </a-cursor>  
+
+</a-camera> 
+    
+      
+
+  </a-scene>
+  <!-- Closing scene -->
+  
+</body>
+
+</html>
